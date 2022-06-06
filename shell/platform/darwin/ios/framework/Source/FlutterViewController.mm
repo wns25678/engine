@@ -1056,7 +1056,6 @@ static flutter::PointerData::DeviceKind DeviceKindFromTouchType(UITouch* touch) 
 }
 
 - (void)forceTouchesCancelled:(NSSet*)touches {
-
 }
 
 #pragma mark - Handle view resizing

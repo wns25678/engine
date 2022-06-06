@@ -802,8 +802,8 @@ void FlutterPlatformViewsController::ResetFrameState() {
         forwardingRecognizer:forwardingRecognizer]);
     _blockingPolicy = blockingPolicy;
 
-//    [self addGestureRecognizer:_delayingRecognizer.get()];
-//    [self addGestureRecognizer:forwardingRecognizer];
+    //    [self addGestureRecognizer:_delayingRecognizer.get()];
+    //    [self addGestureRecognizer:forwardingRecognizer];
   }
   return self;
 }
@@ -843,7 +843,6 @@ void FlutterPlatformViewsController::ResetFrameState() {
 // We want the intercepting view to consume the touches and not pass the touches up to the parent
 // view. Make the touch event method not call super will not pass the touches up to the parent view.
 // Hence we overide the touch event methods and do nothing.
-
 
 @end
 
