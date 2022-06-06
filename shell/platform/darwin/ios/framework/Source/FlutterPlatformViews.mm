@@ -15,6 +15,7 @@
 #import "flutter/shell/platform/darwin/common/framework/Headers/FlutterChannels.h"
 #import "flutter/shell/platform/darwin/ios/framework/Source/FlutterOverlayView.h"
 #import "flutter/shell/platform/darwin/ios/framework/Source/FlutterPlatformViews_Internal.h"
+#import "flutter/shell/platform/darwin/ios/framework/Source/FlutterView.h"
 #import "flutter/shell/platform/darwin/ios/framework/Source/FlutterViewController_Internal.h"
 #import "flutter/shell/platform/darwin/ios/ios_surface.h"
 #import "flutter/shell/platform/darwin/ios/ios_surface_gl.h"
@@ -801,8 +802,8 @@ void FlutterPlatformViewsController::ResetFrameState() {
         forwardingRecognizer:forwardingRecognizer]);
     _blockingPolicy = blockingPolicy;
 
-    [self addGestureRecognizer:_delayingRecognizer.get()];
-    [self addGestureRecognizer:forwardingRecognizer];
+//    [self addGestureRecognizer:_delayingRecognizer.get()];
+//    [self addGestureRecognizer:forwardingRecognizer];
   }
   return self;
 }
@@ -842,17 +843,7 @@ void FlutterPlatformViewsController::ResetFrameState() {
 // We want the intercepting view to consume the touches and not pass the touches up to the parent
 // view. Make the touch event method not call super will not pass the touches up to the parent view.
 // Hence we overide the touch event methods and do nothing.
-- (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
-}
 
-- (void)touchesMoved:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
-}
-
-- (void)touchesCancelled:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
-}
-
-- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event {
-}
 
 @end
 
